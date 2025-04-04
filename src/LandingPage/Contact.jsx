@@ -21,7 +21,7 @@ const Contact = () => {
     name: "",
     email: "",
     subject: "",
-    treatment: "",
+    Enquiry: "",
     message: "",
   });
 
@@ -77,7 +77,62 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-2 lg:grid-cols-2 gap-12 items-start">
+          {/* Contact info */}
+          {/* Map and Contact Info */}
+          <div className="space-y-6">
+            {/* Map */}
+            <div className="rounded-lg overflow-hidden h-[300px] bg-white shadow-lg">
+              <iframe
+                title="Google Maps"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d945.494757215129!2d73.76888166959277!3d18.57498417015168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e70a2bfab1%3A0xa80bc92fd30a3d8!2zQW5pdGEgQXl1cnZlZGEgJiBQYW5jaGthcm1hLCDgpIbgpK_gpYHgpLDgpY3gpLXgpYfgpKYg4KSG4KSj4KS_IOCkquCkguCkmuCkleCksOCljeCkriDgpJrgpL_gpJXgpL_gpKTgpY3gpLjgpL4!5e0!3m2!1sen!2sin!4v1740051805370!5m2!1sen!2sin"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+
+            {/* Contact Information */}
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-serif text-xl text-stone-800 mb-6">
+                  Do visit us at our office
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <p className="font-medium text-stone-800">Location</p>
+                      <p className="text-stone-600">
+                        Shop no 1, Balewadi, Pune, Maharashtra 411045
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <p className="font-medium text-stone-800">
+                        Working Hours
+                      </p>
+                      <p className="text-stone-600">
+                        Monday - Saturday: 10:00 AM - 8:30 PM
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <p className="font-medium text-stone-800">Contact</p>
+                      <p className="text-stone-600">+91 xxxxxxxx</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           {/* Contact form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -160,14 +215,14 @@ const Contact = () => {
                 </motion.div>
                 <motion.div className="space-y-2">
                   <label
-                    htmlFor="treatment"
+                    htmlFor="Enquiry"
                     className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   >
-                    Treatment Type
+                    Enquiry Type
                   </label>
                   <select
-                    id="treatment"
-                    value={formData.treatment}
+                    id="Enquiry"
+                    value={formData.Enquiry}
                     onChange={handleChange}
                     className="mt-0 block w-full rounded-md border border-stone-300 bg-white px-3 py-2 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     required
@@ -209,60 +264,7 @@ const Contact = () => {
             )}
           </motion.div>
 
-          {/* Contact info */}
-          {/* Map and Contact Info */}
-          <div className="space-y-6">
-            {/* Map */}
-            <div className="rounded-lg overflow-hidden h-[300px] bg-white shadow-lg">
-              <iframe
-                title="Google Maps"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d945.494757215129!2d73.76888166959277!3d18.57498417015168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e70a2bfab1%3A0xa80bc92fd30a3d8!2zQW5pdGEgQXl1cnZlZGEgJiBQYW5jaGthcm1hLCDgpIbgpK_gpYHgpLDgpY3gpLXgpYfgpKYg4KSG4KSj4KS_IOCkquCkguCkmuCkleCksOCljeCkriDgpJrgpL_gpJXgpL_gpKTgpY3gpLjgpL4!5e0!3m2!1sen!2sin!4v1740051805370!5m2!1sen!2sin"
-                width="100%"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-              />
-            </div>
 
-            {/* Contact Information */}
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-serif text-xl text-stone-800 mb-6">
-                  Clinic Information
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="font-medium text-stone-800">Location</p>
-                      <p className="text-stone-600">
-                        Shop no 1, Balewadi, Pune, Maharashtra 411045
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Clock className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="font-medium text-stone-800">
-                        Working Hours
-                      </p>
-                      <p className="text-stone-600">
-                        Monday - Saturday: 10:00 AM - 8:30 PM
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="font-medium text-stone-800">Contact</p>
-                      <p className="text-stone-600">+91 xxxxxxxx</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </div>
