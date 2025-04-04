@@ -101,7 +101,7 @@ const CollegeMarquee = () => {
   return (
     <div className="w-full bg-white py-8 border-y border-slate-200">
       <div className="w-full mx-auto md:px-2 px-4">
-        <h2 className="text-4xl font-bold text-center text-slate-900 mb-6">Maharashtra Top Colleges</h2>
+        <h2 className="text-4xl font-bold text-center text-slate-900 mb-6 hero">Maharashtra Top Colleges</h2>
         
         <Tabs defaultValue="all" className="w-full mb-6">
           <div className="flex justify-center">

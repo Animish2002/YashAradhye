@@ -118,3 +118,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: ui;
+  src: url("./fonts/Gilroy-Regular.ttf");
+}
+
+.ui {
+  font-family: "ui", sans-serif;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/Gilroy-Light.ttf");
+}
+
+.hero {
+  font-family: "Gilroy", sans-serif;
+}

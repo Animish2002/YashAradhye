@@ -83,7 +83,7 @@ const SuccessCounter = () => {
     <div className="w-full py-16 px-4 bg-white">
       <div className="max-w-[80rem] mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3 hero">
             Our Success By Numbers
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">

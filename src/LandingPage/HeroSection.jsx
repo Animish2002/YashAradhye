@@ -58,7 +58,7 @@ const HeroSection = () => {
               </span>
             </motion.div>
 
-            <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-white leading-tight">
+            <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-white leading-tight hero">
               Guiding Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">Academic Journey</span>
             </motion.h1>
 
