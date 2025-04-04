@@ -190,14 +190,14 @@ const Footer = () => {
           <p className="text-zinc-500 text-sm">
             © {new Date().getFullYear()} YashAradhye. All rights reserved.
           </p>
-          <div className="mt-4 md:mt-0 flex items-center text-sm text-white hover:text-white">
+          <div className="mt-4 md:mt-0 flex items-center text-sm text-white">
             <span>
               Design and Developed by{' '}
               <a
                 href="https://thefortune.club"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-zinc-700"
+                className="underline hover:text-yellow-400"
               >
                 The Fortune Club
               </a>
