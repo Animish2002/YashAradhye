@@ -177,40 +177,7 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        <Separator className="bg-zinc-700" />
 
-        {/* Newsletter subscription */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="py-10"
-        >
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div className="md:w-1/2">
-              <h4 className="text-xl font-bold mb-2">Stay Updated</h4>
-              <p className="text-zinc-400 text-sm">
-                Subscribe to our newsletter for the latest educational
-                resources, tips, and updates.
-              </p>
-            </div>
-            <div className="md:w-1/2">
-              <div className="flex space-x-2">
-                <Input
-                  type="email"
-                  placeholder="Your email address"
-                  className="bg-zinc-800 border-zinc-700 focus-visible:ring-blue-500"
-                />
-                <Button className="bg-blue-600 hover:bg-blue-700">
-                  Subscribe
-                </Button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        <Separator className="bg-zinc-700" />
 
         {/* Bottom section */}
         <motion.div
@@ -223,10 +190,18 @@ const Footer = () => {
           <p className="text-zinc-500 text-sm">
             © {new Date().getFullYear()} YashAradhye. All rights reserved.
           </p>
-          <div className="mt-4 md:mt-0 flex items-center text-sm text-zinc-500">
-            <span>Made with</span>
-            <Heart className="h-4 w-4 mx-1 text-red-500" />
-            <span>for students across Maharashtra</span>
+          <div className="mt-4 md:mt-0 flex items-center text-sm text-white hover:text-white">
+            <span>
+              Design and Developed by{' '}
+              <a
+                href="https://thefortune.club"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-zinc-700"
+              >
+                The Fortune Club
+              </a>
+            </span>
           </div>
         </motion.div>
       </div>
