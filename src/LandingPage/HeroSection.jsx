@@ -7,26 +7,26 @@ const HeroSection = () => {
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
-  
+
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-white dark:from-zinc-900 dark:via-indigo-950/30 dark:to-zinc-950 pt-16 pb-24">
+    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-white dark:from-zinc-900 dark:via-indigo-950/30 dark:to-zinc-950 pt-16 pb-24 md:h-screen  flex justify-center items-center">
       {/* Abstract geometric background elements */}
       {/* <div className="absolute inset-0 z-0">
         <svg className="absolute top-0 left-0 w-full h-full opacity-20" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
@@ -42,8 +42,8 @@ const HeroSection = () => {
         </svg>
       </div> */}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
+      <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
+        <motion.div
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
           variants={containerVariants}
           initial="hidden"
@@ -51,52 +51,84 @@ const HeroSection = () => {
         >
           {/* Left column - Text content (spans 7 columns on large screens) */}
           <div className="lg:col-span-7 space-y-8">
-            <motion.div variants={itemVariants} className="inline-flex">
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-medium px-4 py-1.5 rounded-full shadow-md shadow-blue-500/20">
-                <span className="mr-2">✦</span>
-                Maharashtra's Premier Academic Guidance
+            <motion.h1
+              variants={itemVariants}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-white leading-tight hero"
+            >
+              Guiding Your{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
+                Academic Journey
               </span>
-            </motion.div>
-
-            <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-white leading-tight hero">
-              Guiding Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">Academic Journey</span>
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="text-lg text-zinc-700 dark:text-zinc-300 max-w-2xl">
-              Helping 10th-grade students from across Maharashtra navigate their path through JEE, NEET, MHT-CET, and board exams with expert guidance and resources.
+            <motion.p
+              variants={itemVariants}
+              className="text-lg text-zinc-700 dark:text-zinc-300 max-w-2xl"
+            >
+              Helping 10th-grade students from across Maharashtra navigate their
+              path through JEE, NEET, MHT-CET, and board exams with expert
+              guidance and resources.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-2">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-600/40 transition-all duration-300">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-4 pt-2"
+            >
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-600/40 transition-all duration-300"
+              >
                 Explore Our Services
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300"
+              >
                 Get Started Today
               </Button>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 max-w-2xl">
+            <motion.div
+              variants={itemVariants}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 max-w-6xl"
+            >
               {[
-                { 
-                  icon: BookOpen, 
-                  title: "Exam Preparation", 
-                  description: "Strategic guidance for JEE, NEET, MHT-CET and board exams" 
+                {
+                  icon: BookOpen,
+                  title: "Exam Preparation",
+                  description:
+                    "Strategic guidance for JEE, NEET, MHT-CET and board exams",
                 },
-                { 
-                  icon: Compass, 
-                  title: "Career Counseling", 
-                  description: "Personalized advice to align your interests with career paths" 
-                }
+                {
+                  icon: Compass,
+                  title: "Career Counseling",
+                  description:
+                    "Personalized advice to align your interests with career paths",
+                },
+                {
+                  icon: Compass,
+                  title: "Career Counseling",
+                  description:
+                    "Personalized advice to align your interests with career paths",
+                },
               ].map((feature, i) => (
-                <div key={i} className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-xl p-4 border border-blue-100 dark:border-blue-900 shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px]">
+                <div
+                  key={i}
+                  className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-xl p-4 border border-blue-100 dark:border-blue-900 shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px]"
+                >
                   <div className="flex items-start space-x-4">
                     <div className="p-2 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-md shadow-blue-500/20">
                       <feature.icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-zinc-900 dark:text-white">{feature.title}</h3>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">{feature.description}</p>
+                      <h3 className="font-semibold text-zinc-900 dark:text-white">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+                        {feature.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -105,7 +137,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right column - Visual elements (spans 5 columns on large screens) */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="lg:col-span-5 relative"
           >
@@ -122,52 +154,16 @@ const HeroSection = () => {
                       <Users className="h-8 w-8 text-white" />
                     </div>
                     <div className="text-center">
-                      <span className="font-bold text-2xl text-white block mb-2">Success Starts Here</span>
-                      <span className="text-blue-100 text-sm">Join 10,000+ students across Maharashtra</span>
+                      <span className="font-bold text-2xl text-white block mb-2">
+                        Success Starts Here
+                      </span>
+                      <span className="text-blue-100 text-sm">
+                        Join 10,000+ students across Maharashtra
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Floating stats card */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.8 }}
-                className="absolute -bottom-6 -left-12 bg-white dark:bg-zinc-800 rounded-xl shadow-xl p-4 border border-blue-100 dark:border-blue-900/50"
-              >
-                <div className="flex items-center space-x-4">
-                  <div className="flex -space-x-3">
-                    {[...Array(3)].map((_, i) => (
-                      <div 
-                        key={i} 
-                        className="w-10 h-10 rounded-full border-2 border-white dark:border-zinc-800 shadow-sm flex items-center justify-center text-white font-medium text-xs"
-                        style={{ 
-                          backgroundColor: i === 0 ? '#3B82F6' : i === 1 ? '#6366F1' : '#4F46E5',
-                          zIndex: 3 - i
-                        }}
-                      >
-                        {['JEE', 'NEET', 'CET'][i]}
-                      </div>
-                    ))}
-                  </div>
-                  <div>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400">Success Rate</p>
-                    <p className="text-sm font-bold text-zinc-900 dark:text-white">92% Above-Average Results</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating badge */}
-              <motion.div
-                initial={{ opacity: 0, x: 30, rotate: 5 }}
-                animate={{ opacity: 1, x: 0, rotate: 5 }}
-                transition={{ delay: 1.2, duration: 0.8 }}
-                className="absolute -top-4 -right-4 bg-gradient-to-br from-amber-400 to-amber-600 text-white rounded-lg py-2 px-3 shadow-lg shadow-amber-500/30 transform rotate-6"
-              >
-                <p className="text-sm font-bold">10+ Years</p>
-                <p className="text-xs">Excellence</p>
-              </motion.div>
             </div>
           </motion.div>
         </motion.div>

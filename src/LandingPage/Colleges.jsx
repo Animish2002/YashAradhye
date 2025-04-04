@@ -37,21 +37,6 @@ const CollegeMarquee = () => {
       { name: "PCCOE Pune", type: "private" },
       { name: "RCOEM Nagpur", type: "private" }
     ],
-    NEET: [
-      { name: "Seth GS Medical College Mumbai", type: "Govt." },
-      { name: "BJ Medical College Pune", type: "Govt." },
-      { name: "Grant Medical College Mumbai", type: "Govt." },
-      { name: "Armed Forces Medical College Pune", type: "Govt." },
-      { name: "KEM Mumbai", type: "Govt." },
-      { name: "LTMMC Mumbai", type: "Govt." },
-      { name: "GMC Nagpur", type: "Govt." },
-      { name: "DY Patil Medical College", type: "private" },
-      { name: "MAEER's MIMER Medical College", type: "private" },
-      { name: "Krishna Institute of Medical Sciences", type: "private" },
-      { name: "Bharati Vidyapeeth Medical College", type: "private" },
-      { name: "MGM Medical College Navi Mumbai", type: "private" },
-      { name: "Pravara Institute of Medical Sciences", type: "private" }
-    ]
   };
 
   // Function to get badge variant based on college type

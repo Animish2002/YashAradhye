@@ -93,7 +93,7 @@ const SuccessCounter = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-10">
           {successMetrics.map((metric, index) => (
             <div
               key={index}
@@ -107,7 +107,7 @@ const SuccessCounter = () => {
               <Card
                 className={`${metric.color} border-none shadow-md overflow-hidden`}
               >
-                <CardContent className="p-6">
+                <CardContent className="md:p-6 p-3.5">
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <p className="text-base font-medium text-slate-600">
@@ -126,11 +126,6 @@ const SuccessCounter = () => {
                       {metric.icon}
                     </span>
                   </div>
-                  <Progress
-                    value={progress[index]}
-                    className="h-2 mt-4"
-                    indicatorClassName={metric.progressColor}
-                  />
                 </CardContent>
               </Card>
             </div>
@@ -144,7 +139,9 @@ const SuccessCounter = () => {
             Join hundreds of successful students who've achieved their academic
             goals with our guidance.
           </p>
-          <Button className="px-10 py-3 bg-blue-500 hover:bg-blue-800">Schedule Your Free Consultation</Button>
+          <Button className="px-10 py-3 bg-blue-500 hover:bg-blue-800">
+            Schedule Your Free Consultation
+          </Button>
         </div>
       </div>
     </div>

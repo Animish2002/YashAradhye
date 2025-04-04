@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
+import { Card, CardContent } from "../components/ui/card";
 import {
   MapPin,
   Mail,
@@ -11,38 +12,8 @@ import {
   Send,
   CheckCircle,
   ChevronRight,
+  Clock,
 } from "lucide-react";
-
-const contactMethods = [
-  {
-    icon: MessageSquare,
-    title: "Chat to Support",
-    description: "We're here to help with any questions",
-    action: "Start a chat",
-    color: "bg-blue-500",
-  },
-  {
-    icon: Mail,
-    title: "Email Us",
-    description: "contact@yasharadhye.com",
-    action: "Send an email",
-    color: "bg-indigo-500",
-  },
-  {
-    icon: Phone,
-    title: "Call Us",
-    description: "+91 98765 43210",
-    action: "Call now",
-    color: "bg-teal-500",
-  },
-  {
-    icon: MapPin,
-    title: "Visit Us",
-    description: "DY Patil College, Pune",
-    action: "Get directions",
-    color: "bg-orange-500",
-  },
-];
 
 const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -50,6 +21,7 @@ const Contact = () => {
     name: "",
     email: "",
     subject: "",
+    treatment: "",
     message: "",
   });
 
@@ -96,7 +68,7 @@ const Contact = () => {
           <h2 className="text-lg font-semibold text-blue-600 dark:text-blue-400">
             Contact Us
           </h2>
-          <h3 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
+          <h3 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl hero">
             Get in Touch
           </h3>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-zinc-500 dark:text-zinc-400">
@@ -186,6 +158,28 @@ const Contact = () => {
                     className="w-full"
                   />
                 </motion.div>
+                <motion.div className="space-y-2">
+                  <label
+                    htmlFor="treatment"
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    Treatment Type
+                  </label>
+                  <select
+                    id="treatment"
+                    value={formData.treatment}
+                    onChange={handleChange}
+                    className="mt-0 block w-full rounded-md border border-stone-300 bg-white px-3 py-2 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    required
+                  >
+                    <option value="">Select option</option>
+                    <option value="jee-guidance">JEE Guidance</option>
+                    <option value="neet-guidance">NEET Guidance</option>
+                    <option value="mhtcet-guidance">MH-CET Guidance</option>
+                    <option value="followup">Board Exam Preparation</option>
+                    <option value="general">General Counseling</option>
+                  </select>
+                </motion.div>
 
                 <motion.div variants={item}>
                   <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
@@ -216,38 +210,59 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact info */}
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-          >
-            {contactMethods.map((method, index) => (
-              <motion.div
-                key={index}
-                variants={item}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="bg-white dark:bg-zinc-800 rounded-xl shadow-md p-6 flex flex-col h-full"
-              >
-                <div
-                  className={`p-3 rounded-full ${method.color} w-12 h-12 flex items-center justify-center mb-4`}
-                >
-                  <method.icon className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-medium text-zinc-900 dark:text-white mb-1">
-                  {method.title}
+          {/* Map and Contact Info */}
+          <div className="space-y-6">
+            {/* Map */}
+            <div className="rounded-lg overflow-hidden h-[300px] bg-white shadow-lg">
+              <iframe
+                title="Google Maps"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d945.494757215129!2d73.76888166959277!3d18.57498417015168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e70a2bfab1%3A0xa80bc92fd30a3d8!2zQW5pdGEgQXl1cnZlZGEgJiBQYW5jaGthcm1hLCDgpIbgpK_gpYHgpLDgpY3gpLXgpYfgpKYg4KSG4KSj4KS_IOCkquCkguCkmuCkleCksOCljeCkriDgpJrgpL_gpJXgpL_gpKTgpY3gpLjgpL4!5e0!3m2!1sen!2sin!4v1740051805370!5m2!1sen!2sin"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+
+            {/* Contact Information */}
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-serif text-xl text-stone-800 mb-6">
+                  Clinic Information
                 </h3>
-                <p className="text-zinc-500 dark:text-zinc-400 text-sm flex-grow">
-                  {method.description}
-                </p>
-                <button className="mt-4 text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline flex items-center">
-                  {method.action}
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </button>
-              </motion.div>
-            ))}
-          </motion.div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <p className="font-medium text-stone-800">Location</p>
+                      <p className="text-stone-600">
+                        Shop no 1, Balewadi, Pune, Maharashtra 411045
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <p className="font-medium text-stone-800">
+                        Working Hours
+                      </p>
+                      <p className="text-stone-600">
+                        Monday - Saturday: 10:00 AM - 8:30 PM
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <p className="font-medium text-stone-800">Contact</p>
+                      <p className="text-stone-600">+91 xxxxxxxx</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
